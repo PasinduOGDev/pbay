@@ -98,13 +98,13 @@
 
             <!-- category name start -->
 
-            <div class="row bg-black bg-opacity-75" id="shoparea">
+            <div class="row" id="shoparea">
                 <div class="col-12 d-flex justify-content-center">
-                    <h2 class="text-light mt-2"><?php echo $category1_data["category_name"]; ?></h2>
+                    <h2 class="text-dark mt-1"><?php echo $category1_data["category_name"]; ?></h2>
                 </div>
 
                 <div class="col-12 d-flex justify-content-center">
-                    <a href="#" class="mb-2 link-warning text-decoration-none fs-6">More &nbsp; &rarr;</a>
+                    <a href="#" class="mb-1 link-warning text-decoration-none fs-6">More &nbsp; &rarr;</a>
                 </div>
             </div>
 
@@ -142,9 +142,9 @@
 
                                         ?>
 
-                                        <a href="#"><img src="<?php echo $image_data["img_path"]; ?>" class="card-img-top" width="20px"></a>
+                                        <a href="#"><img src="<?php echo $image_data["img_path"]; ?>" class="col-12"></a>
                                         <div class="card-body text-center ms-0 m-0">
-                                            <p class="card-title fs-6 fw-bold"><?php echo $product_data["title"]; ?></p>
+                                            <p class="col-12 fs-6 fw-bold"><?php echo $product_data["title"]; ?></p>
                                             <span class="card-text text-primary fs-4 fw-bold">Rs. <?php echo $product_data["price"]; ?></span><br />
 
                                             <?php
@@ -188,14 +188,6 @@
                                             }
                                             
                                             ?>
-
-                                                <div class="row mt-1 px-4">
-                                                    <div class="col-12 px-1">
-                                                        <button class="col-12 btn btn-outline-dark">
-                                                            <i class="bi bi-suit-heart-fill text-dark"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
 
                                         </div>
                                     </div>

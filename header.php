@@ -27,7 +27,7 @@
 
                         session_start();
 
-                        if (isset ($_SESSION["u"])) {
+                        if (isset($_SESSION["u"])) {
 
                             $data = $_SESSION["u"];
 
@@ -66,7 +66,7 @@
 
                             <?php
 
-                            if (isset ($_SESSION["u"])) {
+                            if (isset($_SESSION["u"])) {
 
                                 ?>
 
@@ -90,7 +90,7 @@
 
                     <?php
 
-                    if (isset ($_SESSION["u"])) {
+                    if (isset($_SESSION["u"])) {
 
                         ?>
 
@@ -123,8 +123,7 @@
                 <div class="col-12 col-lg-6">
 
                     <div class="input-group mb-2 mb-lg-3 mt-3">
-                        <input type="text" class="form-control" placeholder="Search"
-                            aria-label="Text input with dropdown button" />
+                        <input type="text" class="form-control" placeholder="Search..." />
 
                         <select class="form-select" style="max-width: 200px;">
                             <option value="0">All Categories</option>
@@ -168,8 +167,9 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body text-center">
+                        <h4 class="form-label text-danger"><img src="img/logo/logo.png" width="80px" height="80px"></h4>
                         <h4 class="form-label text-danger"><i class="bi bi-shield-lock-fill"></i></h4>
-                        <p id="textmodal">Enter Password to Verify</p>
+                        <p id="textmodal">Enter Password to verify it's you</p>
                         <div class="col-12 input-group">
                             <input type="password" class="form-control" id="confirmPassword"
                                 placeholder="Enter Your Password">
@@ -181,8 +181,8 @@
                         </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                            onclick="userVerify();">Verify</button>
+                        <button type="button" class="col-8 btn btn-primary" data-bs-dismiss="modal"
+                            onclick="userVerify();">Continue</button>
                     </div>
                 </div>
             </div>

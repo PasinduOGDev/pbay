@@ -15,11 +15,13 @@ function changeview() {
 // register start
 
 // global variables
+
 var regSuccessModal;
 var textModal = document.getElementById("textmodal");
 var iconModal = document.getElementById("iconModal");
 var btnModal = document.getElementById("modalbtn");
 var box = document.getElementById("regSuccessBox");
+
 // global variables
 
 function register() {
@@ -228,44 +230,96 @@ function showPassword() {
 
 // forgot password
 
+// global variables
+
+var fpSuccessModal;
 var forgotPasswordModal;
+
+// global variables
 
 function forgotPassword() {
 
-    var email = document.getElementById("e");
     var modal = document.getElementById("fpModal");
 
-    // regSuccessModal = new bootstrap.Modal(box);
-    // textModal.innerHTML = "Verification code has sent to your email. Please check your inbox";
-    // btnModal.innerHTML = "Reset Now";
-    // regSuccessModal.show();
+    forgotPasswordModal = new bootstrap.Modal(modal);
+    forgotPasswordModal.show();
+
+    // var email = document.getElementById("e");
+
+    // // for modal
+
+    // var fptextModal = document.getElementById("fptextmodal");
+    // // var fpiconModal = document.getElementById("fpiconModal");
+    // // var fpbtnModal = document.getElementById("fpmodalbtn");
+    // var fpbox = document.getElementById("fpwSuccessBox");
+
+    // // for modal
+
+    // // // forgotPasswordModal = new bootstrap.Modal(modal);
+    // // // forgotPasswordModal.show();
+
+    // var request = new XMLHttpRequest();
+
+    // request.onreadystatechange = function() {
+    //     if (request.readyState == 4 && request.status == 200) {
+    //         var response = request.responseText;
+    //         if (response == 'Success') {
+    //             fpSuccessModal = new bootstrap.Modal(fpbox);
+    //             fptextModal.innerHTML = "Verification code has sent to your email. Please check your inbox";
+    //             fpSuccessModal.show();
+    //         } else {
+    //             alert(response);
+    //         }
+    //     }
+    // }
+
+    // request.open("GET", "forgotpwProcess.php?e=" + email.value, true);
+    // request.send();
+
+}
+
+function resetPwModal() {
+
+    // var modal = document.getElementById("fpModal");
 
     // forgotPasswordModal = new bootstrap.Modal(modal);
     // forgotPasswordModal.show();
 
-    var r = new XMLHttpRequest();
+}
 
-    r.onreadystatechange = function () {
-        if (r.readyState == 4 && r.status == 200) {
-            var t = r.responseText;
-            if (t == 'success') {
-                regSuccessModal = new bootstrap.Modal(box);
-                textModal.innerHTML = "Verification code has sent to your email. Please check your inbox";
-                btnModal.innerHTML = "Reset Now";
-                regSuccessModal.show();
-                forgotPasswordModal = new bootstrap.Modal(modal);
-                forgotPasswordModal.show();
-            } else {
-                msg1.innerHTML = t;
-                msg1.className = "alert-div-alerted-danger";
-                msg_div1.className = "d-block";
-            }
-        }
+function showPassword4() {
 
-        r.open("GET", "forgotpwProcess.php?e=" + email.value, true);
-        r.send();
+    var textfield = document.getElementById("np");
+    var button = document.getElementById("npb");
 
+    if (textfield.type == "password") {
+        textfield.type = "text";
+        button.innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+    } else {
+        textfield.type = "password";
+        button.innerHTML = '<i class="bi bi-eye-fill"></i>';
     }
+
+}
+
+function showPassword5() {
+
+    var textfield = document.getElementById("rnp");
+    var button = document.getElementById("rnpb");
+
+    if (textfield.type == "password") {
+        textfield.type = "text";
+        button.innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
+    } else {
+        textfield.type = "password";
+        button.innerHTML = '<i class="bi bi-eye-fill"></i>';
+    }
+
+}
+
+function resetPassword() {
+
+    
 
 }
 
@@ -278,10 +332,6 @@ function forgotPassword() {
 var userConfirmModal;
 
 function userConfirm() {
-
-    // var r = new XMLHttpRequest();
-
-    // r.open("GET", "confirmModalProcess.php?")
 
     var modal = document.getElementById("confirmBox");
     userConfirmModal = new bootstrap.Modal(modal);
@@ -339,7 +389,7 @@ function userVerify() {
                 textName.className = 'text-danger';
                 btn.className = 'd-none';
                 msgModal.show();
-                
+
             }
         }
     }
@@ -358,12 +408,12 @@ function tryToConfirm() {
 }
 
 function showPassword2() {
-    
+
     var textfield = document.getElementById("confirmPassword");
-    var button  = document.getElementById("confirmPwBtn");
+    var button = document.getElementById("confirmPwBtn");
 
     if (textfield.type == "password") {
-        
+
         textfield.type = "text";
         button.innerHTML = '<i class="bi bi-eye-slash-fill"></i>'
 

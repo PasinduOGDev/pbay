@@ -69,7 +69,8 @@ require "connection.php";
 
                                 <div class="col-12">
                                     <label class="form-label fw-bold">Email Address</label>
-                                    <input autocomplete="off" class="form-control" type="email" id="e" placeholder="Email Address" value="<?php echo $email; ?>">
+                                    <input autocomplete="off" class="form-control" type="email" id="e"
+                                        placeholder="Email Address" value="<?php echo $email; ?>">
                                     <div class="col-12 d-none" id="msgdiv2">
                                         <div class="alert-div-alerted-error" role="alert" id="msg2"></div>
                                     </div>
@@ -78,8 +79,10 @@ require "connection.php";
                                 <div class="col-12">
                                     <label class="form-label fw-bold">Password</label>
                                     <div class="input-group flex-nowrap">
-                                        <input autocomplete="off" type="password" class="form-control" id="p" placeholder="Password" value="<?php echo $pw; ?>">
-                                        <a class="input-group-text" id="pwb" onclick="showPassword();"><i class="bi bi-eye-fill"></i></a>
+                                        <input autocomplete="off" type="password" class="form-control" id="p"
+                                            placeholder="Password" value="<?php echo $pw; ?>">
+                                        <a class="input-group-text" id="pwb" onclick="showPassword();"><i
+                                                class="bi bi-eye-fill"></i></a>
                                     </div>
                                     <div class="col-12 d-none" id="msgdiv3">
                                         <div class="alert-div-alerted-error" role="alert" id="msg3"></div>
@@ -92,11 +95,13 @@ require "connection.php";
                                 </div>
 
                                 <div class="col-12 col-md-6 d-flex justify-content-md-end">
-                                    <a class="link-primary fw-bold" onclick="forgotPassword();" href="#">forgotten password?</a>
+                                    <a class="link-primary fw-bold" onclick="forgotPassword();" href="#">forgotten
+                                        password?</a>
                                 </div>
 
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-                                    <button onclick="login();" class="col-8 btn btn-outline-primary fw-bold">Sign in</button>
+                                    <button onclick="login();" class="col-8 btn btn-outline-primary fw-bold">Sign
+                                        in</button>
                                 </div>
 
                                 <div class="col-12 text-center mt-1">
@@ -168,8 +173,10 @@ require "connection.php";
                                 <div class="col-6">
                                     <label class="form-label fw-bold">Enter New Password</label>
                                     <div class="input-group flex-nowrap">
-                                        <input type="password" class="form-control" id="pw" placeholder="Enter Password">
-                                        <a class="input-group-text" id="npwb" onclick="newPassword();"><i class="bi bi-eye-fill"></i></a>
+                                        <input type="password" class="form-control" id="pw"
+                                            placeholder="Enter Password">
+                                        <a class="input-group-text" id="npwb" onclick="newPassword();"><i
+                                                class="bi bi-eye-fill"></i></a>
                                     </div>
                                     <div class="col-12 d-none mt-3 mb-2" id="msgdiv8">
                                         <div class="alert-div-alerted-error" role="alert" id="msg8"></div>
@@ -179,8 +186,10 @@ require "connection.php";
                                 <div class="col-6">
                                     <label class="form-label fw-bold">Confirm New Password</label>
                                     <div class="input-group flex-nowrap">
-                                        <input type="password" class="form-control" id="confirmpw" placeholder="Confirm Password">
-                                        <a class="input-group-text" id="cpwb" onclick="confirmPassword();"><i class="bi bi-eye-fill"></i></a>
+                                        <input type="password" class="form-control" id="confirmpw"
+                                            placeholder="Confirm Password">
+                                        <a class="input-group-text" id="cpwb" onclick="confirmPassword();"><i
+                                                class="bi bi-eye-fill"></i></a>
                                     </div>
                                     <div class="col-12 d-none mt-3 mb-2" id="msgdiv9">
                                         <div class="alert-div-alerted-error" role="alert" id="msg9"></div>
@@ -208,11 +217,13 @@ require "connection.php";
                                         for ($x = 0; $x < $gender_num; $x++) {
                                             $gender_data = $gender_rs->fetch_assoc();
 
-                                        ?>
+                                            ?>
 
-                                            <option value="<?php echo $gender_data["gender_id"]; ?>"><?php echo $gender_data["gender_name"]; ?></option>
+                                            <option value="<?php echo $gender_data["gender_id"]; ?>">
+                                                <?php echo $gender_data["gender_name"]; ?>
+                                            </option>
 
-                                        <?php
+                                            <?php
 
                                         }
 
@@ -225,7 +236,8 @@ require "connection.php";
                                 </div>
 
                                 <div class="col-12 mt-4 d-flex justify-content-center">
-                                    <button onclick="register();" class="col-8 btn btn-outline-danger fw-bold">Register</button>
+                                    <button onclick="register();"
+                                        class="col-8 btn btn-outline-danger fw-bold">Register</button>
                                 </div>
 
                                 <div class="col-12 text-center mt-1">
@@ -251,6 +263,7 @@ require "connection.php";
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
+                        <img src="img/logo/logo.png" width="70px" height="70px">&nbsp;&nbsp;
                         <h5 class="modal-title">Forgot Password</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -262,7 +275,8 @@ require "connection.php";
                                 <label class="form-label">New Password</label>
                                 <div class="input-group mb-3">
                                     <input type="password" class="form-control" id="np" />
-                                    <button class="btn btn-outline-secondary" type="button" id="npb" onclick="showPassword4();">Show</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="npb"
+                                        onclick="showPassword4();"><i class="bi bi-eye-fill"></i></button>
                                 </div>
                             </div>
 
@@ -270,7 +284,8 @@ require "connection.php";
                                 <label class="form-label">Re-type Password</label>
                                 <div class="input-group mb-3">
                                     <input type="password" class="form-control" id="rnp" />
-                                    <button class="btn btn-outline-secondary" type="button" id="rnpb" onclick="showPassword5();">Show</button>
+                                    <button class="btn btn-outline-secondary" type="button" id="rnpb"
+                                        onclick="showPassword5();"><i class="bi bi-eye-fill"></i></button>
                                 </div>
                             </div>
 
@@ -310,6 +325,25 @@ require "connection.php";
 
         <!-- registered msg box -->
 
+        <!-- forgot password success msg box -->
+
+        <div class="modal" tabindex="-1" id="fpwSuccessBox">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <h4 class="form-label" id="fpiconModal"></i></h4>
+                        <p id="fptextmodal">Registration Success!</p>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center modal-footer">
+                        <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="fpmodalbtn"
+                            onclick="resetPwModal();">Reset Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- forgot password success msg box -->
+
         <div class="row">
 
             <?php include "footer.php"; ?>
@@ -319,7 +353,9 @@ require "connection.php";
     </div>
 
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
