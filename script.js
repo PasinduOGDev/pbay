@@ -239,51 +239,46 @@ var forgotPasswordModal;
 
 function forgotPassword() {
 
-    var modal = document.getElementById("fpModal");
+    var email = document.getElementById("e");
 
-    forgotPasswordModal = new bootstrap.Modal(modal);
-    forgotPasswordModal.show();
+    // for modal
 
-    // var email = document.getElementById("e");
+    var fptextModal = document.getElementById("fptextmodal");
+    // var fpiconModal = document.getElementById("fpiconModal");
+    // var fpbtnModal = document.getElementById("fpmodalbtn");
+    var fpbox = document.getElementById("fpwSuccessBox");
 
-    // // for modal
+    // for modal
 
-    // var fptextModal = document.getElementById("fptextmodal");
-    // // var fpiconModal = document.getElementById("fpiconModal");
-    // // var fpbtnModal = document.getElementById("fpmodalbtn");
-    // var fpbox = document.getElementById("fpwSuccessBox");
+    // // forgotPasswordModal = new bootstrap.Modal(modal);
+    // // forgotPasswordModal.show();
 
-    // // for modal
+    var request = new XMLHttpRequest();
 
-    // // // forgotPasswordModal = new bootstrap.Modal(modal);
-    // // // forgotPasswordModal.show();
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var response = request.responseText;
+            if (response == 'Success') {
+                fpSuccessModal = new bootstrap.Modal(fpbox);
+                fptextModal.innerHTML = "Verification code has sent to your email. Please check your inbox";
+                fpSuccessModal.show();
+            } else {
+                alert(response);
+            }
+        }
+    }
 
-    // var request = new XMLHttpRequest();
-
-    // request.onreadystatechange = function() {
-    //     if (request.readyState == 4 && request.status == 200) {
-    //         var response = request.responseText;
-    //         if (response == 'Success') {
-    //             fpSuccessModal = new bootstrap.Modal(fpbox);
-    //             fptextModal.innerHTML = "Verification code has sent to your email. Please check your inbox";
-    //             fpSuccessModal.show();
-    //         } else {
-    //             alert(response);
-    //         }
-    //     }
-    // }
-
-    // request.open("GET", "forgotpwProcess.php?e=" + email.value, true);
-    // request.send();
+    request.open("GET", "forgotpwProcess.php?e=" + email.value, true);
+    request.send();
 
 }
 
 function resetPwModal() {
 
-    // var modal = document.getElementById("fpModal");
+    var modal = document.getElementById("fpModal");
 
-    // forgotPasswordModal = new bootstrap.Modal(modal);
-    // forgotPasswordModal.show();
+    forgotPasswordModal = new bootstrap.Modal(modal);
+    forgotPasswordModal.show();
 
 }
 
@@ -319,7 +314,34 @@ function showPassword5() {
 
 function resetPassword() {
 
-    
+    var email = document.getElementById("e");
+    var newPassword = document.getElementById("np");
+    var confirmPassword = document.getElementById("rnp");
+    var verifyCode = document.getElementById("vc");
+
+    var form = new FormData();
+
+    form.append("e", email.value);
+    form.append("np", newPassword.value);
+    form.append("cp", confirmPassword.value);
+    form.append("vc", verifyCode.value);
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = function () {
+        if (request.readyState == 4 && request.status == 200) {
+            var response = request.responseText;
+            if (response == 'success') {
+                window.location.reload();
+            } else {
+                document.getElementById("msg").innerHTML = response;
+                document.getElementById("msgdiv").className = "d-block";
+            }
+        }
+    }
+
+    request.open("POST", "resetpwProcess.php", true);
+    request.send(form);
 
 }
 

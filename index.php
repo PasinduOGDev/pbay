@@ -269,6 +269,12 @@ require "connection.php";
                     </div>
                     <div class="modal-body">
 
+                        <div class="col-12 d-none" id="msgdiv">
+                            <div class="alert alert-danger" role="alert" id="msg">
+
+                            </div>
+                        </div>
+
                         <div class="row g-3">
 
                             <div class="col-6">

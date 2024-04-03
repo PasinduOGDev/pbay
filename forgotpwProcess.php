@@ -17,7 +17,7 @@ if (isset($_GET["e"])) {
 
     if ($n == 1) {
 
-        $code = rand(000000, 999999);
+        $code = rand(111111, 999999);
         Database::iud("UPDATE `user` SET `verification_code`='" . $code . "' WHERE `email`='" . $email . "'");
 
         $mail = new PHPMailer;
