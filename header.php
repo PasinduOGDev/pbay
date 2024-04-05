@@ -176,9 +176,6 @@
                             <button class="btn btn-light" id="confirmPwBtn" onclick="showPassword2();"><i
                                     class="bi bi-eye-fill"></i></button>
                         </div>
-                        <div class="col-12 mt-2">
-                            <a class="link-primary float-end" href="#">forgot password?</a>
-                        </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center modal-footer">
                         <button type="button" class="col-8 btn btn-primary" data-bs-dismiss="modal"
