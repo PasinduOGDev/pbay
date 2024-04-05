@@ -23,6 +23,10 @@
 
     include "connection.php";
 
+    if (condition) {
+        # code...
+    }
+
     ?>
 
     <!-- header end -->
